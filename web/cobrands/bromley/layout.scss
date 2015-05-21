@@ -1,2 +1,38 @@
 @import "_colours";
 @import "../sass/layout";
+
+// Override the logo on the front page
+body.frontpage {
+  #site-header {
+    // Increase the height of the site-header on the front page to suit the
+    // taller logo image
+    height: 14em;
+  }
+  #site-logo {
+    width: 159px;
+    height: 114px;
+    background: url(/cobrands/bromley/bromley-logo.jpg) 0 0 no-repeat;
+  }
+}
+//logo fix
+.ie6, .ie7 {
+  body.frontpage {
+    // TODO - how tall should this be in IE6/7?
+    #site-header {
+      height:4em;
+    }
+    #site-logo {
+      // TODO - what should this be in IE6/7?
+      top:-1em;
+    }
+  }
+}
+.ie6 body.frontpage #site-logo {
+  background:url(/cobrands/bromley/bromley-logo.jpg) 0 0 no-repeat;
+}
+
+// Bromley's .top-links section floats to the right on bigger screens
+.top-links {
+    float: right;
+    width: auto;
+}
